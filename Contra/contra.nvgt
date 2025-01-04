@@ -1,0 +1,14 @@
+#include "music.nvgt";
+music_manager m;
+bool p;
+void main()
+{
+p = m.play("snd/contra snowfields.mp3; intro=snd/contra snofields intro.mp3");
+show_window("contra");
+while (!key_pressed(KEY_SPACE))
+{
+wait(5);
+m.loop();
+}
+m.stop();
+}

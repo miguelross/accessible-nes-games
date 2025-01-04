@@ -1,5 +1,3 @@
-# xasos
-Exstream audible operating system portable and the principal use is for the xastation console.
-
-# AFBF, aka Accessibility Freebasic Framework
-This repository also contains a project called AFBF, aka Accessibility Freebasic Framework.
+# accessible-nes-games
+ghis repository will contain some adaptation of old nes games
+using nvgt engine by Sam Tupy

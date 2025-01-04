@@ -1,0 +1,17 @@
+// skate or die konami for nes
+#include "include/music.nvgt";
+#include "include/custom_menu.nvgt";
+music_manager sodmusics;
+custom_menu sodmenus;
+bool p;
+void main()
+{
+p = sodmusics.play("sounds/sod title.mp3");
+show_window("Skate or die");
+while (!key_pressed(KEY_SPACE))
+{
+wait(5);
+sodmusics.loop();
+}
+sodmusics.stop();
+}
