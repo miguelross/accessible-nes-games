@@ -3,7 +3,7 @@ music_manager m;
 bool p;
 void main()
 {
-m.play("sounds/contra alien's lair.mp3; intro=sounds/contra alien's lair intro.mp3");
+m.play("sounds/contra snowfields.mp3; intro=sounds/contra snowfields intro.mp3");
 show_window("contra");
 while (!key_pressed(KEY_SPACE))
 {

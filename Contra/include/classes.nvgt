@@ -1,0 +1,40 @@
+#include "music.nvgt";
+#include "sound_pool.nvgt";
+bool fade(music_manager@ noise, double start_volume, double end_volume, double time, bool interruptable)
+{
+noise.volume = start_volume;
+timer t;
+double elapsed = t.elapsed;
+while(elapsed < time)
+{ noise.volume = start_volume + (end_volume-start_volume)*elapsed/time;
+wait(5);
+elapsed = t.elapsed;
+if(key_pressed(KEY_SPACE) && interruptable)
+{
+return true;
+}
+}
+noise.volume = end_volume;
+return false;
+}
+music_manager musics;
+int music_volume;
+void music_change(string music_file, bool fade = false, string intro)
+{
+if(musics.playing)
+{
+if(fade == true)
+{
+fade(@music, music_volume, -50, 500, false);
+} else {
+musics.stop();
+}
+}
+if(intro != "")
+{
+musics.play(music_file + "; intro= + intro);
+} else {
+musics.play(music_file);
+}
+}
+
